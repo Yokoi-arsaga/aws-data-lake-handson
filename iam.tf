@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "data_lake_admin" {
+data "aws_iam_policy_document" "admin" {
   statement {
     effect = "Allow"
     actions = [
@@ -7,11 +7,12 @@ data "aws_iam_policy_document" "data_lake_admin" {
   }
 }
 
-resource "aws_iam_policy" "data_lake_admin" {
-  name   = "data_lake_admin"
-  policy = data.aws_iam_policy_document.data_lake_admin
+resource "aws_iam_policy" "admin" {
+  name   = "${var.name_prefix}_admin"
+  user   = aws_iam_user.admin.name
+  policy = data.aws_iam_policy_document.admin
 }
 
-resource "aws_iam_user" "data_lake_admin" {
-
+resource "aws_iam_user" "admin" {
+  name = "${var.name_prefix}_admin"
 }
