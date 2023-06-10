@@ -13,3 +13,8 @@ variable "region" {
 variable "name_prefix" {
   default = "data-lake"
 }
+
+variable "pgp_key" {
+  description = "IAMユーザーのパスワード生成で利用するpgpの公開鍵（base64形式）"
+  type        = string
+}
