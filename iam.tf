@@ -32,3 +32,10 @@ resource "aws_iam_access_key" "admin" {
   user    = aws_iam_user.admin.name
   pgp_key = var.pgp_key
 }
+
+#====================================
+# chapter 7
+#====================================
+resource "aws_iam_role" "chap7" {
+  name = "${var.name_prefix}_chap7"
+}
