@@ -1,5 +1,5 @@
 resource "aws_glue_catalog_database" "chap7" {
-
+  name = "chap7"
 }
 
 resource "aws_glue_crawler" "chap7" {
